@@ -7,8 +7,6 @@ import NetlifyCMS from "astro-decap-cms";
 export default defineConfig({
 	site: "https://example.com",
 	integrations: [
-		mdx(),
-		sitemap(),
 		NetlifyCMS({
 			config: {
 				backend: {
@@ -25,11 +23,15 @@ export default defineConfig({
 						delete: true,
 						fields: [
 							{ name: "title", widget: "string", label: "Post Title" },
+							{ name: "date", widget: "datetime", label: "Publish Date" },
+							{ name: "hero", widget: "image", label: "Featured Image" },
 							{ name: "body", widget: "markdown", label: "Post Body" },
 						],
 					},
 				],
 			},
 		}),
+		mdx(),
+		sitemap(),
 	],
 });
