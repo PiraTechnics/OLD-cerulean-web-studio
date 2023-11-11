@@ -23,8 +23,13 @@ export default defineConfig({
 						delete: true,
 						fields: [
 							{ name: "title", widget: "string", label: "Post Title" },
-							{ name: "date", widget: "datetime", label: "Publish Date" },
-							{ name: "hero", widget: "image", label: "Featured Image" },
+							{
+								name: "description",
+								widget: "string",
+								label: "Post Description",
+							},
+							{ name: "pubDate", widget: "datetime", label: "Publish Date" },
+							{ name: "heroImage", widget: "image", label: "Featured Image" },
 							{ name: "body", widget: "markdown", label: "Post Body" },
 						],
 					},
