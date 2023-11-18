@@ -29,8 +29,5 @@
 	"overrides": {
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
-	},
-	"devDependencies": {
-		"daisyui": "^4.0.1"
 	}
 }
