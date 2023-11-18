@@ -1,8 +1,26 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
-import ThemeIcon from "./ThemeIcon.astro";
+import ThemeChange from "./ThemeChange.astro";
 ---
+
+<script is:inline>
+	// ☝️ This script prevent the FART effect.
+	if (localStorage.getItem("theme") === null) {
+		document.documentElement.setAttribute("data-theme", "light");
+	} else
+		document.documentElement.setAttribute(
+			"data-theme",
+			localStorage.getItem("theme")
+		);
+	// "theme" LocalStorage value is set by the package to remember user preference.
+	// The value is checked and applyed before rendering anything.
+</script>
+<script>
+	import { themeChange } from "theme-change";
+	themeChange();
+	//Note: on first load, theme defaults to night mode, regardless of browser preference
+</script>
 
 <header>
 	<nav>
@@ -41,7 +59,8 @@ import ThemeIcon from "./ThemeIcon.astro";
 				>
 			</a>
 		</div>
-		<ThemeIcon />
+		<!-- <ThemeIcon /> -->
+		<ThemeChange />
 	</nav>
 </header>
 <style>
