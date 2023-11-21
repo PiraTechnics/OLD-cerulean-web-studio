@@ -24,20 +24,22 @@ import ThemeChange from "./ThemeChange.astro";
 </script>
 
 <header>
-	<nav class="flex">
+	<nav class="flex py-2">
 		<div id="header-brand" class="flex-initial">
 			<a href="/" class="text-2xl">{SITE_TITLE}</a>
 		</div>
 		<div
-			id="internal-link-menu"
+			id="desktop-menu"
 			class="flex-auto flex max-md:hidden justify-end gap-2 mx-2"
 		>
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-			<HeaderLink href="/services">Services</HeaderLink>
-			<HeaderLink href="/testimonials">Testimonials</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/contact">Contact</HeaderLink>
+			<HeaderLink class="px-2 py-4" href="/">Home</HeaderLink>
+			<HeaderLink class="px-2 py-4" href="/about">About</HeaderLink>
+			<HeaderLink class="px-2 py-4" href="/services">Services</HeaderLink>
+			<HeaderLink class="px-2 py-4" href="/testimonials">
+				Testimonials
+			</HeaderLink>
+			<HeaderLink class="px-2 py-4" href="/blog">Blog</HeaderLink>
+			<HeaderLink class="px-2 py-4" href="/contact">Contact</HeaderLink>
 		</div>
 		<div id="tools-menu" class="flex flex-auto justify-end">
 			<label class="btn btn-square swap swap-rotate md:hidden">
@@ -72,14 +74,14 @@ import ThemeChange from "./ThemeChange.astro";
 	</nav>
 	<div
 		id="mobile-menu"
-		class="fixed top-30 left-0 w-screen bg-base-200 rounded flex flex-col text-center md:hidden hidden gap-2"
+		class="fixed top-30 left-0 w-screen bg-secondary-content rounded flex flex-col text-center md:hidden hidden text-xl"
 	>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="/services">Services</HeaderLink>
-		<HeaderLink href="/testimonials">Testimonials</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/contact">Contact</HeaderLink>
+		<HeaderLink class="py-2" href="/">Home</HeaderLink>
+		<HeaderLink class="py-2" href="/about">About</HeaderLink>
+		<HeaderLink class="py-2" href="/services">Services</HeaderLink>
+		<HeaderLink class="py-2" href="/testimonials">Testimonials</HeaderLink>
+		<HeaderLink class="py-2" href="/blog">Blog</HeaderLink>
+		<HeaderLink class="py-2" href="/contact">Contact</HeaderLink>
 	</div>
 </header>
 
