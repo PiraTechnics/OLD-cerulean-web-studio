@@ -1,6 +1,7 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
+//import Brand from "./Brand.astro";
 import ThemeChange from "./ThemeChange.astro";
 ---
 
@@ -25,7 +26,7 @@ import ThemeChange from "./ThemeChange.astro";
 <header>
 	<nav class="flex">
 		<div id="header-brand" class="flex-initial">
-			<h2><a href="/">{SITE_TITLE}</a></h2>
+			<a href="/" class="text-2xl">{SITE_TITLE}</a>
 		</div>
 		<div
 			id="internal-link-menu"
@@ -69,7 +70,10 @@ import ThemeChange from "./ThemeChange.astro";
 			<ThemeChange />
 		</div>
 	</nav>
-	<div id="mobile-menu" class="flex flex-col text-center md:hidden gap-2 mx-2">
+	<div
+		id="mobile-menu"
+		class="fixed top-30 left-0 w-screen bg-base-200 rounded flex flex-col text-center md:hidden hidden gap-2"
+	>
 		<HeaderLink href="/">Home</HeaderLink>
 		<HeaderLink href="/about">About</HeaderLink>
 		<HeaderLink href="/services">Services</HeaderLink>
@@ -86,19 +90,40 @@ import ThemeChange from "./ThemeChange.astro";
 
 	//If mobile menu is open, sync toggle with it
 	if (sessionStorage.getItem("mobile-menu") !== null) {
-		const toggleInit = sessionStorage.getItem("mobile-menu");
-		toggle.checked = toggleInit === "open" ? true : false;
+		if (sessionStorage.getItem("mobile-menu") === "open") {
+			menu.classList.remove("hidden");
+			toggle.checked = true;
+		} else {
+			menu.classList.add("hidden");
+			toggle.checked = false;
+		}
+		//toggle.checked = toggleInit === "open" ? true : false;
 	} else {
 		//if we haven't set it yet, default to "off"
-		menu.classList.add("hidden");
+		//menu.classList.add("hidden");
 		sessionStorage.setItem("mobile-menu", "closed");
 	}
 
 	// Add Event Listener
 	toggle.addEventListener("change", () => {
-		menu.classList.toggle("hidden");
+		if (toggle.checked === true) {
+			//turn it all on
+			//menu.classList.remove("hide");
+			menu.classList.add("slide-down");
 
-		sessionStorage.setItem("mobile-menu", toggle.checked ? "open" : "closed");
+			menu.classList.remove("hidden");
+			sessionStorage.setItem("mobile-menu", "open");
+		} else {
+			menu.classList.remove("slide-down");
+			//menu.classList.add("hide");
+			menu.classList.add("hidden");
+			sessionStorage.setItem("mobile-menu", "closed");
+		}
+
+		/* 		menu.classList.toggle("hidden");
+		menu.classList.toggle("slide-down"); */
+
+		//sessionStorage.setItem("mobile-menu", toggle.checked ? "open" : "closed");
 
 		/* 		console.log(`Mobile menu is ${sessionStorage.getItem("mobile-menu")}`);
 		console.log(`Toggle switch is ${toggle.checked}`); */
@@ -112,7 +137,7 @@ import ThemeChange from "./ThemeChange.astro";
 		/* background: white; */
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
-	h2 {
+	/* 	h2 {
 		margin: 0;
 		font-size: 1em;
 	}
@@ -120,7 +145,7 @@ import ThemeChange from "./ThemeChange.astro";
 	h2 a,
 	h2 a.active {
 		text-decoration: none;
-	}
+	} */
 	nav {
 		display: flex;
 		align-items: center;
@@ -135,4 +160,35 @@ import ThemeChange from "./ThemeChange.astro";
 			display: none;
 		}
 	} */
+	.slide-down {
+		animation: slidedown 400ms ease-in-out normal;
+		transform-origin: top center;
+	}
+
+	/* 	.hide {
+		transform: scaleY(0);
+		animation: slide 200ms normal;
+		transform-origin: top center;
+	}
+
+	@keyframes slide {
+		0% {
+			transform: scaleY(1);
+		}
+		100% {
+			transform: scaleY(0);
+		}
+	} */
+
+	@keyframes slidedown {
+		0% {
+			transform: scaleY(0);
+		}
+		80% {
+			transform: scaleY(1.1);
+		}
+		100% {
+			transform: scaleY(1);
+		}
+	}
 </style>

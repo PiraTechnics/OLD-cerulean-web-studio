@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+import Hammer from "../assets/hammer.png";
+import HammerDark from "../assets/hammer-dark.png";
+---
+
+<div class="flex gap-1 items-center">
+	<Image
+		src={typeof document !== `undefined` &&
+		document.documentElement.getAttribute("data-theme") === "dark"
+			? HammerDark
+			: Hammer}
+		alt="Hammer Logo"
+		width={50}
+		height={50}
+	/><span class="text-3xl">Vulcan</span>
+</div>
