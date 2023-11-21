@@ -1,18 +1,6 @@
-# Astro Starter Kit: Blog
+# Astro Decap Tailwind Template
 
-```sh
-npm create astro@latest -- --template blog
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
-
-Features:
+A template for a brochure/basic business website, powered by Astro and Decap CMS. Styling done with TailwindCSS & DaisyUI.
 
 - ✅ Minimal styling (make it your own!)
 - ✅ 100/100 Lighthouse performance
@@ -63,6 +51,21 @@ All commands are run from the root of the project, from a terminal:
 
 Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
+## 🚀 Quick start (Netlify)
+
+Deploy this template with one click on [Netlify](https://app.netlify.com/signup):
+
+[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/PiraTechnics/astro-decap-template)
+
+## Getting Started
+
+Coming Soon
+
 ## Credit
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Project based on the official [Astro Blog Starter](https://astro.build/themes/details/blog/)
+The theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+CMS Integration with astro-decap-cms package. See [Astro Documention](https://docs.astro.build/en/guides/cms/decap-cms/) for more detail
+Styling with Tailwind CSS and DaisyUI
+
+
