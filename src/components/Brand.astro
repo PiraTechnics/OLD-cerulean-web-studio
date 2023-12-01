@@ -1,17 +1,17 @@
 ---
+import { SITE_TITLE } from "../consts";
 import { Image } from "astro:assets";
-import Hammer from "../assets/hammer.png";
-import HammerDark from "../assets/hammer-dark.png";
+import Logo from "../assets/logo.png";
 ---
 
-<div class="flex gap-1 items-center">
+<div class="flex gap-4 items-end">
 	<Image
-		src={typeof document !== `undefined` &&
-		document.documentElement.getAttribute("data-theme") === "dark"
-			? HammerDark
-			: Hammer}
-		alt="Hammer Logo"
-		width={50}
-		height={50}
-	/><span class="text-3xl">Vulcan</span>
+		src={Logo}
+		alt="Cerulean Web Studio Logo"
+		class="w-[75px] sm:w-[50px]"
+	/>
+	<div class="flex flex-col max-w-20">
+		<span class="text-4xl font-bold text-primary">Cerulean</span>
+		<span class="text-3xl tracking-tight">Web Studio</span>
+	</div>
 </div>

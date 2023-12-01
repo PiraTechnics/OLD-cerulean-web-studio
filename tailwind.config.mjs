@@ -6,6 +6,17 @@ export default {
 	},
 	plugins: [require("daisyui")],
 	daisyui: {
-		themes: ["night", "winter"],
+		themes: ["winter", "night"],
+		/* 		themes: [
+			{
+				cws: {
+					primary: "#0140bf",
+					secondary: "#0080ff",
+					accent: "#0080ff",
+					neutral: "#0140bf",
+					"base-100": "#ffffff",
+				},
+			},
+		], */
 	},
 };

@@ -1,7 +1,6 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
-//import Brand from "./Brand.astro";
+import Brand from "./Brand.astro";
 import ThemeChange from "./ThemeChange.astro";
 ---
 
@@ -25,9 +24,10 @@ import ThemeChange from "./ThemeChange.astro";
 
 <header>
 	<nav class="flex py-2">
-		<div id="header-brand" class="flex-initial">
+		<!-- 		<div id="header-brand" class="flex-initial">
 			<a href="/" class="text-2xl">{SITE_TITLE}</a>
-		</div>
+		</div> -->
+		<Brand />
 		<div
 			id="desktop-menu"
 			class="flex-auto flex max-md:hidden justify-end gap-2 mx-2"
