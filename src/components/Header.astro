@@ -121,14 +121,6 @@ import ThemeChange from "./ThemeChange.astro";
 			menu.classList.add("hidden");
 			sessionStorage.setItem("mobile-menu", "closed");
 		}
-
-		/* 		menu.classList.toggle("hidden");
-		menu.classList.toggle("slide-down"); */
-
-		//sessionStorage.setItem("mobile-menu", toggle.checked ? "open" : "closed");
-
-		/* 		console.log(`Mobile menu is ${sessionStorage.getItem("mobile-menu")}`);
-		console.log(`Toggle switch is ${toggle.checked}`); */
 	});
 </script>
 
@@ -136,51 +128,17 @@ import ThemeChange from "./ThemeChange.astro";
 	header {
 		margin: 0;
 		padding: 0 1em;
-		/* background: white; */
 		box-shadow: 0 2px 8px rgba(var(--black), 5%);
 	}
-	/* 	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	} */
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 	}
-	/* 	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	} */
 	.slide-down {
 		animation: slidedown 400ms ease-in-out normal;
 		transform-origin: top center;
 	}
-
-	/* 	.hide {
-		transform: scaleY(0);
-		animation: slide 200ms normal;
-		transform-origin: top center;
-	}
-
-	@keyframes slide {
-		0% {
-			transform: scaleY(1);
-		}
-		100% {
-			transform: scaleY(0);
-		}
-	} */
 
 	@keyframes slidedown {
 		0% {
